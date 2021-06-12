@@ -18,3 +18,5 @@ forge 'https://forge.puppet.com'
 
 #puppet support task
 mod 'puppetlabs-support_tasks', '1.1.3'
+#local security policy
+mod 'ayohrling-local_security_policy', '0.8.1'
