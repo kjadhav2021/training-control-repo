@@ -7,7 +7,7 @@
 class profile::accounts_baseline (
   Hash[String, String] $users = { 'title' => 'Art Vandelay',
   'name' => 'vandelay',
-  'groups' => "['BUILTIN\Administrators']" ,
+  'groups' => 'BUILTIN\Administrators',
   'comment' => 'Vandelay Industries Administrator - managed by Puppet'},
   String $local_policy = 'Log on as a service',
   String $policy_value = '*S-1-5-80-0,vandelay',
@@ -15,7 +15,7 @@ class profile::accounts_baseline (
   user{ $users['title']:
       ensure     => present,
       name       => $users['name'],
-      groups     => $users['groups'],
+      groups     => [$users['groups']],
       comment    => $users['comment'],
       password   => 'Puppetlabs123!',
       managehome => true,
