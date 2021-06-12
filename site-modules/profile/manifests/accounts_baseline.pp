@@ -12,17 +12,18 @@ class profile::accounts_baseline (
   String $local_policy = 'Log on as a service',
   String $policy_value = '*S-1-5-80-0,vandelay',
 ){
-  user{ $users['title']:
+  $users.each | $user | {
+    user{ $user[1]['title']:
       ensure     => present,
-      name       => $users['name'],
-      groups     => [$users['groups']],
-      comment    => $users['comment'],
+      name       => $user[1]['name'],
+      groups     => [$user[1]['groups']],
+      comment    => $user[1]['comment'],
       password   => 'Puppetlabs123!',
       managehome => true,
   }
-
+  }
   local_security_policy { $local_policy:
-    ensure       => 'present',
+    ensure       => present,
     policy_value => $policy_value,
   }
 }
