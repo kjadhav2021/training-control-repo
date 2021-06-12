@@ -17,7 +17,7 @@ class profile::accounts_baseline (
       name       => $users['name'],
       groups     => $users['groups'],
       comment    => $users['comment'],
-      password   => 'puppetlabs',
+      password   => 'Puppetlabs123!',
       managehome => true,
   }
 
