@@ -10,11 +10,11 @@ class profile::accounts_baseline (
   String $policy_value ,
 ){
   $users.each | $user | {
-    user{ $user['title']:
+    user{ $user[1]['title']:
       ensure     => present,
-      name       => $user['name'],
-      groups     => [$user['groups']],
-      comment    => $user['comment'],
+      name       => $user[1]['name'],
+      groups     => [$user[1]['groups']],
+      comment    => $user[1]['comment'],
       password   => 'Puppetlabs123!',
       managehome => true,
   }
