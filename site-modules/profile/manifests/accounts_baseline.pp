@@ -5,7 +5,7 @@
 # @example
 #   include profile::accounts_baseline
 class profile::accounts_baseline (
-  Hash[String, String] $users ,
+  Hash $users ,
   String $local_policy ,
   String $policy_value ,
 ){
