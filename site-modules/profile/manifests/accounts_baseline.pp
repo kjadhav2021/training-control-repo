@@ -55,7 +55,7 @@ class profile::accounts_baseline (
     permissions                => [
       { identity => 'vandelay', rights => ['full'], perm_type=> 'allow', child_types => 'all', affects => 'all' },
       { identity => 'administrators', rights => ['read','execute'], perm_type=> 'allow', child_types => 'all', affects => 'all' },
-      { identity => 'everyone', rights => ['read'], perm_type=> 'deny', child_types => 'all', affects => 'all' },
+      { identity => 'everyone', perm_type=> 'deny'},
     ],
     owner                      => 'vandelay', #Creator_Owner specific, doesn't manage unless specified
     group                      => 'Administrators', #Creator_Group specific, doesn't manage unless specified
