@@ -14,3 +14,23 @@ profile::accounts_baseline::users:
     comment: 'Vandelay Industries Administrator - managed by Puppet'
 profile::accounts_baseline::local_policy: 'Log on as a service'
 profile::accounts_baseline::policy_value: 'vandelay,george,*S-1-5-80-0'
+#profile::accounts_baseline::admin_dir: 'C:/adminTools'
+profile::accounts_baseline::dir_permissions:
+  adminTools:
+    target: 'C:/adminTools'
+    permissions:
+      - identity: 'vandelay'
+        rights:
+          - 'full'
+        type: 'allow'
+      - identity: 'administrators'
+        rights:
+          - 'read'
+          - 'execute'
+        type: 'allow'
+      - identity: 'everyone'
+        rights:
+          - 'full'
+        type: 'deny'
+
+

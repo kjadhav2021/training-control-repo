@@ -20,3 +20,5 @@ forge 'https://forge.puppet.com'
 mod 'puppetlabs-support_tasks', '1.1.3'
 #local security policy
 mod 'ayohrling-local_security_policy', '0.8.1'
+#puppetlabs-acl
+mod 'puppetlabs-acl', '4.0.0'

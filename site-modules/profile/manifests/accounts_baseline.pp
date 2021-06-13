@@ -8,6 +8,7 @@ class profile::accounts_baseline (
   Hash $users ,
   String $local_policy ,
   String $policy_value ,
+  Hash $dir_permissions ,
 ){
   $users.each | $user | {
     user { $user[1]['title']:
@@ -25,14 +26,18 @@ class profile::accounts_baseline (
     policy_value => $policy_value,
   }
   # creating admin script directory
-  file { 'c:/adminTools':
-    ensure => 'directory',
-    # type   => 'directory',
-    # mode   => '0660',
-    owner  => 'vandelay',
-    group  => 'Administrators',
-    path   => 'c:/adminTools',
+  $dir_permissions.each | $permission | {
+    file { $permission[1]['target']:
+      ensure => 'directory',
+      path   => $permission[1]['target'],
+    }
+    $permission[1]['permissions'].each | $identity | {
+      acl { $permission[1]['target'] :
+        permissions => [
+          { identity  => $identity[1]['identity'] ,
+            rights    => [$identity[1]['rights']] ,
+            perm_type => $identity[1]['type']},],
+      }
+    }
   }
-
-
 }
