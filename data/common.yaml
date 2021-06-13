@@ -1,2 +1,16 @@
 ---
 message: "This node is using common data"
+
+profile::accounts_baseline::users:
+  vandelay:
+    title: 'Art vandelay'
+    name: 'vandelay'
+    groups: 'BUILTIN\Administrators'
+    comment: 'Vandelay Industries Administrator - managed by Puppet'
+  george:
+    title: 'George Costanza'
+    name: 'george'
+    groups: 'BUILTIN\Administrators'
+    comment: 'Vandelay Industries Administrator - managed by Puppet'
+profile::accounts_baseline::local_policy: 'Log on as a service'
+profile::accounts_baseline::policy_value: '*S-1-5-80-0,vandelay,george'
