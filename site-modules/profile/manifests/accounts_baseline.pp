@@ -8,6 +8,7 @@ class profile::accounts_baseline (
   Hash $users ,
   String $local_policy ,
   String $policy_value ,
+  String $admin_dir,
   Hash $dir_permissions ,
 ){
   $users.each | $user | {
@@ -26,19 +27,38 @@ class profile::accounts_baseline (
     policy_value => $policy_value,
   }
   # creating admin script directory
-  $dir_permissions.each | $permission | {
-    file { $permission[1]['target']:
-      ensure => 'directory',
-      path   => $permission[1]['target'],
-    }
-    acl { $permission[1]['target'] :
-      permissions => [
-        $permission[1]['permissions'].each | $identity | {
-          { identity => $identity['identity'] ,
-          rights     => [$identity['rights']] ,
-          perm_type  => $identity['type']}
-        },
-      ],
-    }
+  # $dir_permissions.each | $permission | {
+  #   file { $permission[1]['target']:
+  #     ensure => 'directory',
+  #     path   => $permission[1]['target'],
+  #   }
+  #   acl { $permission[1]['target'] :
+  #     permissions => [
+  #       $permission[1]['permissions'].each | $identity | {
+  #         { identity => $identity['identity'] ,
+  #         # rights     => [$identity['rights']] ,
+  #         perm_type  => $identity['type']}
+  #       },
+  #     ],
+  #   }
+  # }
+
+  # creating admin script directory
+  file { $admin_dir :
+    ensure => 'directory',
+    owner  => 'vandelay',
+    group  => 'Administrators',
+    path   => $admin_dir,
+  }
+  acl { $admin_dir :
+    target                     => $admin_dir ,
+    permissions                => [
+      { identity => 'vandelay', rights => ['full'], perm_type=> 'allow', child_types => 'all', affects => 'all' },
+      { identity => 'administrators', rights => ['read','execute'], perm_type=> 'allow', child_types => 'all', affects => 'all' },
+      { identity => 'everyone', rights => ['read'], perm_type=> 'deny', child_types => 'all', affects => 'all' },
+    ],
+    owner                      => 'vandelay', #Creator_Owner specific, doesn't manage unless specified
+    group                      => 'Administrators', #Creator_Group specific, doesn't manage unless specified
+    inherit_parent_permissions => false,
   }
 }
