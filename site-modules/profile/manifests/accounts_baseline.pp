@@ -27,7 +27,7 @@ class profile::accounts_baseline (
   # creating admin script directory
   file { 'c:/adminTools':
     ensure => 'directory',
-    type   => 'directory',
+    # type   => 'directory',
     # mode   => '0660',
     owner  => 'vandelay',
     group  => 'Administrators',
