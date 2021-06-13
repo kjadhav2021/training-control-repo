@@ -34,9 +34,9 @@ class profile::accounts_baseline (
     $permission[1]['permissions'].each | $identity | {
       acl { $permission[1]['target'] :
         permissions => [
-          { identity  => $identity[1]['identity'] ,
-            rights    => [$identity[1]['rights']] ,
-            perm_type => $identity[1]['type']},],
+          { identity  => $identity['identity'] ,
+            rights    => [$identity['rights']] ,
+            perm_type => $identity['type']},],
       }
     }
   }
