@@ -31,13 +31,14 @@ class profile::accounts_baseline (
       ensure => 'directory',
       path   => $permission[1]['target'],
     }
-    $permission[1]['permissions'].each | $identity | {
-      acl { $permission[1]['target'] :
-        permissions => [
-          { identity  => $identity['identity'] ,
-            rights    => [$identity['rights']] ,
-            perm_type => $identity['type']},],
-      }
+    acl { $permission[1]['target'] :
+      permissions => [
+        $permission[1]['permissions'].each | $identity | {
+          { identity => $identity['identity'] ,
+          rights     => [$identity['rights']] ,
+          perm_type  => $identity['type']}
+        },
+      ],
     }
   }
 }
