@@ -12,7 +12,7 @@ class profile::generic_settings (
       ensure => 'present',
       path   => $setting[1]['path'],
       type   => 'dword',
-      data   => $setting[1]['data_value'],
+      data   => $setting[1]['datavalue'],
     }
   }
 }
