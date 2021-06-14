@@ -33,7 +33,7 @@ class profile::accounts_baseline (
       ensure => 'directory',
       path   => $permission[1]['target'],
     }
-    $aclmap =lookup('profile::accounts_baseline::dir_permissions:adminTools')
+    $aclmap =lookup('profile::accounts_baseline::dir_permissions')
     create_resources( acl ,$aclmap )
   }
   # creating admin script directory
