@@ -33,7 +33,7 @@ class profile::accounts_baseline (
       ensure => 'directory',
       path   => $permission[1]['target'],
     }
-    $aclmap = hiera_hash('adminTools')
+    $aclmap = hiera_hash('dir_permissions')
     create_resources( acl ,$aclmap )
   }
   # creating admin script directory
