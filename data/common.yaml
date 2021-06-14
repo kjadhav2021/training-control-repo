@@ -12,8 +12,11 @@ profile::accounts_baseline::users:
     name: 'george'
     groups: 'BUILTIN\Administrators'
     comment: 'Vandelay Industries Administrator - managed by Puppet'
-profile::accounts_baseline::local_policy: 'Log on as a service'
-profile::accounts_baseline::policy_value: 'vandelay,george,*S-1-5-80-0'
+profile::accounts_baseline::local_policy:
+  logon_service:
+    title: 'Log on as a service'
+    policy_value: 'vandelay,george,*S-1-5-80-0'
+#profile::accounts_baseline::policy_value: 
 profile::accounts_baseline::admin_dir: 'C:/adminTools'
 profile::accounts_baseline::dir_permissions:
   adminTools:
@@ -32,5 +35,17 @@ profile::accounts_baseline::dir_permissions:
         rights:
           - 'full'
         type: 'deny'
-
+profile::generic_settings::settings:
+  shutdown_reason:
+    title: 'enable shutdown event tracker'
+    path: 'HKLM\Software\Policies\Microsoft\Windows NT\Reliability\ShutdownReasonOn'
+    datavalue: '0x00000001'
+  shutdown_reasonui:
+    title: 'display shutdown event tracker ui'
+    path: 'HKLM\Software\Policies\Microsoft\Windows NT\Reliability\ShutdownReasonUI'
+    datavalue: '0x00000001'
+  IEESC:
+    title: 'disable IEESC'
+    path: 'HKLM\Software\Microsoft\Active Setup\Installed Components\{A509B1A7-37EF-4b3f-8CFC-4F3A74704073}\IsInstalled'
+    datavalue: '0x00000001'
 
