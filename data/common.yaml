@@ -36,10 +36,10 @@ profile::accounts_baseline::dir_permissions:
           - 'full'
         perm_type: 'deny'
 profile::generic_settings::settings:
-  shutdown_reason:
-    title: 'enable shutdown event tracker'
-    path: 'HKLM\Software\Policies\Microsoft\Windows\CurrentVersion\Reliability\ShutdownReasonOn'
-    datavalue: '0x00000001'
+  # shutdown_reason:
+  #   title: 'enable shutdown event tracker'
+  #   path: 'HKLM\Software\Policies\Microsoft\Windows\CurrentVersion\Reliability\ShutdownReasonOn'
+  #   datavalue: '0x00000001'
   shutdown_reasonui:
     title: 'display shutdown event tracker ui'
     path: 'HKLM\Software\Policies\Microsoft\Windows\CurrentVersion\Reliability\ShutdownReasonUI'
