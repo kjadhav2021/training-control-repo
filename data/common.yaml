@@ -25,16 +25,16 @@ profile::accounts_baseline::dir_permissions:
       - identity: 'vandelay'
         rights:
           - 'full'
-        type: 'allow'
+        perm_type: 'allow'
       - identity: 'administrators'
         rights:
           - 'read'
           - 'execute'
-        type: 'allow'
+        perm_type: 'allow'
       - identity: 'everyone'
         rights:
           - 'full'
-        type: 'deny'
+        perm_type: 'deny'
 profile::generic_settings::settings:
   shutdown_reason:
     title: 'enable shutdown event tracker'
