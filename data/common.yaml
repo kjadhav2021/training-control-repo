@@ -39,12 +39,12 @@ profile::generic_settings::settings:
   shutdown_reason:
     title: 'enable shutdown event tracker'
     path: 'HKLM\Software\Policies\Microsoft\Windows NT\Reliability\ShutdownReasonOn'
-    datavalue: '0x00000001'
+    datavalue: '1'
   shutdown_reasonui:
     title: 'display shutdown event tracker ui'
     path: 'HKLM\Software\Policies\Microsoft\Windows NT\Reliability\ShutdownReasonUI'
-    datavalue: '0x00000001'
+    datavalue: '1'
   IEESC:
     title: 'disable IEESC'
     path: 'HKLM\Software\Microsoft\Active Setup\Installed Components\{A509B1A7-37EF-4b3f-8CFC-4F3A74704073}\IsInstalled'
-    datavalue: '0x00000001'
+    datavalue: '1'
