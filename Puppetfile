@@ -22,3 +22,5 @@ mod 'puppetlabs-support_tasks', '1.1.3'
 mod 'ayohrling-local_security_policy', '0.8.1'
 #puppetlabs-acl
 mod 'puppetlabs-acl', '4.0.0'
+#puppetlabs-registry
+mod 'puppetlabs-registry', '4.0.0'

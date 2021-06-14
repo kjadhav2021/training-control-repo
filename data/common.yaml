@@ -16,7 +16,7 @@ profile::accounts_baseline::local_policy:
   logon_service:
     title: 'Log on as a service'
     policy_value: 'vandelay,george,*S-1-5-80-0'
-#profile::accounts_baseline::policy_value: 
+#profile::accounts_baseline::policy_value:
 profile::accounts_baseline::admin_dir: 'C:/adminTools'
 profile::accounts_baseline::dir_permissions:
   adminTools:
@@ -48,4 +48,3 @@ profile::generic_settings::settings:
     title: 'disable IEESC'
     path: 'HKLM\Software\Microsoft\Active Setup\Installed Components\{A509B1A7-37EF-4b3f-8CFC-4F3A74704073}\IsInstalled'
     datavalue: '0x00000001'
-
