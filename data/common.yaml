@@ -38,11 +38,11 @@ profile::accounts_baseline::dir_permissions:
 profile::generic_settings::settings:
   shutdown_reason:
     title: 'enable shutdown event tracker'
-    path: 'HKLM\Software\Policies\Microsoft\Windows NT\Reliability\ShutdownReasonOn'
+    path: 'HKLM\Software\Policies\Microsoft\Windows\CurrentVersion\Reliability\ShutdownReasonOn'
     datavalue: '0x00000001'
   shutdown_reasonui:
     title: 'display shutdown event tracker ui'
-    path: 'HKLM\Software\Policies\Microsoft\Windows NT\Reliability\ShutdownReasonUI'
+    path: 'HKLM\Software\Policies\Microsoft\Windows\CurrentVersion\Reliability\ShutdownReasonUI'
     datavalue: '0x00000001'
   IEESC:
     title: 'disable IEESC'
