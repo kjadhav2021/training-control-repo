@@ -59,10 +59,10 @@ profile::install_tpp_archive::archivesettings:
     sha_checksum: '4cdd6069d216923b9458b5298ca071b159d4eb272294bd46d1fce0b1d890cd6a'
     extract: true
   mobaxterm_msi:
-    title: 'mobaxterm-msifile'
+    title: 'MobaXterm_installer_21.2.msi'
     source: 'c:/tmppackage/MobaXterm_Installer_v21.2/MobaXterm_installer_21.2.msi'
     sha_checksum: '4cdd6069d216923b9458b5298ca071b159d4eb272294bd46d1fce0b1d890cd6a'
-    dependent_class: 'mobaxterm-zipfile'
+    dependent_class: 'MobaXterm_Installer_v21.2.zip'
 profile::install_tpp_chocolatey::tpp:
   7zip:
     package_name: '7zip'

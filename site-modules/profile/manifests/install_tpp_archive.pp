@@ -21,19 +21,19 @@ class profile::install_tpp_archive (
           path          => "${extract_path}/${d['title']}",
           checksum      => $d['sha_checksum'],
           checksum_type => 'sha256',
-          creates       => "${extract_path}/MobaXterm_Installer_v21.2",
+          # creates       => "${extract_path}/MobaXterm_Installer_v21.2",
           cleanup       => true,
         }
       }
-      # else {
-      #   archive { $d['title']:
-      #     path          => $extract_path,
-      #     source        => $d['source'],
-      #     checksum      => $d['sha_checksum'],
-      #     checksum_type => 'sha256',
-      #     provider      => 'windows',
-      #     require       => Archive[$d['dependent_class']],
-      #   }
-      # }
+      else {
+        archive { $d['title']:
+          path          => $extract_path,
+          source        => "${extract_path}/${d['title']}",
+          checksum      => $d['sha_checksum'],
+          checksum_type => 'sha256',
+          provider      => 'windows',
+          require       => Archive[$d['dependent_class']],
+        }
+      }
     }
 }
