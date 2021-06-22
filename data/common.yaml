@@ -51,7 +51,7 @@ profile::generic_settings::settings:
     title: 'disable IEESC for user'
     path: 'HKLM\Software\Microsoft\Active Setup\Installed Components\{A509B1A8-37EF-4b3f-8CFC-4F3A74704073}\IsInstalled'
     datavalue: '0x00000000'
-profile::install_tpp_archive::extract_path: 'c:/tmppackage'
+profile::install_tpp_archive::extract_path: 'c:/tmppackage/'
 profile::install_tpp_archive::archivesettings:
   mobaxterm_zip:
     title: 'mobaxterm-zipfile'

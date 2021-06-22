@@ -8,6 +8,10 @@ class profile::install_tpp_archive (
   String $extract_path,
   Hash $archivesettings,
 ){
+    file { $extract_path:
+      ensure => 'directory',
+      path   => $extract_path,
+    }
     $archivesettings.each | $k,$d | {
       if $d['extract'] {
         archive { $d['title']:
@@ -19,6 +23,7 @@ class profile::install_tpp_archive (
           checksum      => $d['sha_checksum'],
           checksum_type => 'sha256',
           creates       => $extract_path,
+          require       => File[$extract_path],
         }
       }
       # else {
