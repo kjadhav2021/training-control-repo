@@ -21,7 +21,7 @@ class profile::install_tpp_chocolatey
     }
   }
   if $reboot_machine {
-    reboot { 'after run':
+    reboot { 'after_run':
       apply  => finished,
     }
   }

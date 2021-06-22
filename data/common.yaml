@@ -61,8 +61,8 @@ profile::install_tpp_archive::archivesettings:
 profile::install_tpp_chocolatey::tpp:
   7zip:
     package_name: '7zip'
-    reboot_title: 'after run'
+    reboot_title: 'after_run'
   notepadplusplus:
     package_name: 'notepadplusplus.install'
-    reboot_title: 'after run'
+    reboot_title: 'after_run'
 profile::install_tpp_chocolatey::reboot_machine: false
