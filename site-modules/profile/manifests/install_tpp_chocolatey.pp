@@ -10,6 +10,7 @@ class profile::install_tpp_chocolatey
 ){
   #  install and configure Chocolatey
   include chocolatey
+
   $tpp.each | $k,$d | {
     package { $d['package_name']:
       ensure   => installed,
