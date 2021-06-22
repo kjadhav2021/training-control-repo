@@ -54,7 +54,7 @@ profile::generic_settings::settings:
 profile::install_tpp_archive::extract_path: 'c:/tmppackage'
 profile::install_tpp_archive::archivesettings:
   mobaxterm_zip:
-    title: 'mobaxterm-zipfile'
+    title: 'MobaXterm_Installer_v21.2.zip'
     source: 'https://download.mobatek.net/2122021051924233/MobaXterm_Installer_v21.2.zip'
     sha_checksum: '4cdd6069d216923b9458b5298ca071b159d4eb272294bd46d1fce0b1d890cd6a'
     extract: true
@@ -70,4 +70,3 @@ profile::install_tpp_chocolatey::tpp:
   notepadplusplus:
     package_name: 'notepadplusplus.install'
     reboot_machine: false
-
