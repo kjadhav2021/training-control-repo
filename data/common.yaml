@@ -16,8 +16,7 @@ profile::accounts_baseline::local_policy:
   logon_service:
     title: 'Log on as a service'
     policy_value: 'vandelay,george,*S-1-5-80-0'
-#profile::accounts_baseline::policy_value:
-profile::accounts_baseline::admin_dir: 'C:/adminTools'
+# profile::accounts_baseline::admin_dir: 'C:/adminTools'
 profile::accounts_baseline::dir_permissions:
   adminTools:
     target: 'C:/adminTools'
@@ -48,3 +47,23 @@ profile::generic_settings::settings:
     title: 'disable IEESC'
     path: 'HKLM\Software\Microsoft\Active Setup\Installed Components\{A509B1A7-37EF-4b3f-8CFC-4F3A74704073}\IsInstalled'
     datavalue: '0x00000001'
+profile::install_tpp_archive::extract_path: 'c:/tmppackage'
+profile::install_tpp_archive::archivesettings:
+  mobaxterm_zip:
+    title: 'mobaxterm-zipfile'
+    source: 'https://download.mobatek.net/2122021051924233/MobaXterm_Installer_v21.2.zip'
+    sha_checksum: '4cdd6069d216923b9458b5298ca071b159d4eb272294bd46d1fce0b1d890cd6a'
+    extract: true
+  mobaxterm_msi:
+    title: 'mobaxterm-msifile'
+    source: 'c:/tmppackage/MobaXterm_Installer_v21.2/MobaXterm_installer_21.2.msi'
+    sha_checksum: '4cdd6069d216923b9458b5298ca071b159d4eb272294bd46d1fce0b1d890cd6a'
+    dependent_class: 'mobaxterm-zipfile'
+profile::install_tpp_chocolatey::tpp:
+  7zip:
+    package_name: '7zip'
+    reboot_machine: false
+  notepadplusplus:
+    package_name: 'notepadplusplus.install'
+    reboot_machine: false
+

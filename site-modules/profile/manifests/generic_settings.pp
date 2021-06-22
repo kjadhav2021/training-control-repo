@@ -7,12 +7,12 @@
 class profile::generic_settings (
   Hash $settings,
   ){
-  $settings.each | $setting | {
-    registry_value { $setting[1]['title'] :
+  $settings.each | $k,$d | {
+    registry_value { $d['title'] :
       ensure => 'present',
-      path   => $setting[1]['path'],
+      path   => $d['path'],
       type   => 'dword',
-      data   => $setting[1]['datavalue'],
+      data   => $d['datavalue'],
     }
   }
 }
