@@ -44,11 +44,11 @@ profile::generic_settings::settings:
     path: 'HKLM\Software\Microsoft\Windows\CurrentVersion\Reliability\ShutdownReasonUI'
     datavalue: '0x00000001'
   IEESC:
-    title: 'disable IEESC - admin'
+    title: 'disable IEESC for admin'
     path: 'HKLM\Software\Microsoft\Active Setup\Installed Components\{A509B1A7-37EF-4b3f-8CFC-4F3A74704073}\IsInstalled'
     datavalue: '0x00000000'
   IEESC2:
-  title: 'disable IEESC - user'
+  title: 'disable IEESC for user'
   path: 'HKLM\Software\Microsoft\Active Setup\Installed Components\{A509B1A8-37EF-4b3f-8CFC-4F3A74704073}\IsInstalled'
   datavalue: '0x00000000'
 profile::install_tpp_archive::extract_path: 'c:/tmppackage'
