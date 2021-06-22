@@ -8,7 +8,7 @@
 class profile::install_tpp_chocolatey
 (
   Hash $tpp,
-  String $reboot_machine,
+  Boolean $reboot_machine,
 ){
   #  install and configure Chocolatey
   include chocolatey
