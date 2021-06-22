@@ -15,14 +15,13 @@ class profile::install_tpp_archive (
     $archivesettings.each | $k,$d | {
       if $d['extract'] {
         archive { $d['title']:
-          ensure        => present,
-          path          => $extract_path,
+          source        => $d['source'],
           extract       => $d['extract'],
           extract_path  => $extract_path,
-          source        => $d['source'],
           checksum      => $d['sha_checksum'],
           checksum_type => 'sha256',
-          creates       => $extract_path,
+          creates       => "${extract_path}/MobaXterm_Installer_v21.2",
+          cleanup       => false,
         }
       }
       # else {
