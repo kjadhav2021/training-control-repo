@@ -41,3 +41,4 @@ mod 'iis_webserver',
     branch: 'production'
 
 mod 'puppetlabs-iis', '8.0.2'
+mod 'puppet-windowsfeature', '3.2.2'
