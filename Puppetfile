@@ -25,6 +25,6 @@ mod 'puppetlabs-acl', '4.0.0'
 #puppetlabs-registry
 mod 'puppetlabs-registry', '4.0.0'
 
-mod 'iis_webserver'
-    git: 'git@github.com:kjadhav2021/iis_webserver.git'
+mod 'iis_webserver',
+    git: 'git@github.com:kjadhav2021/iis_webserver.git',
     branch: 'production'
