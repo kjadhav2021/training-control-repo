@@ -7,6 +7,7 @@
 class profile::install_tpp_chocolatey
 (
   Hash $tpp,
+  String $reboot_machine,
 ){
   #  install and configure Chocolatey
   include chocolatey
@@ -15,12 +16,12 @@ class profile::install_tpp_chocolatey
     package { $d['package_name']:
       ensure   => installed,
       provider => 'chocolatey',
+      notify   => Reboot[$d['reboot_title']],
     }
-    if $d['reboot_machine'] {
-      reboot { 'after':
-        provider  => 'windows',
-        subscribe => Package[$d['package_name']],
-      }
+  }
+  if $reboot_machine {
+    reboot { 'after run':
+      apply  => finished,
     }
   }
 }
