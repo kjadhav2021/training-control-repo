@@ -1,7 +1,11 @@
-# @summary A short summary of the purpose of this class
+# @summary
+# A profile class for the accounts baseline for user machine.
 #
-# A description of what this class does
+# It creates local accounts for users based on values provided in the data file common.yaml.
+# Also, it enables logon as a service for user id.
 #
+# It provides directory rights for given admin script directory path and local account
+# using ACL module from forge.
 # @example
 #   include profile::accounts_baseline
 class profile::accounts_baseline (

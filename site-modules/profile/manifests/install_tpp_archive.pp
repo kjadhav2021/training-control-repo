@@ -1,6 +1,7 @@
-# @summary A short summary of the purpose of this class
+# @summary
+# A profile class for the user machine.
 #
-# A description of what this class does
+# It installs mobaxterm using archive module.
 #
 # @example
 #   include profile::install_tpp_archive

@@ -1,6 +1,4 @@
 ---
-message: "This node is using common data"
-
 profile::accounts_baseline::users:
   vandelay:
     title: 'Art vandelay'

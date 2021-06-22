@@ -1,6 +1,7 @@
-# @summary A short summary of the purpose of this class
+# @summary
+# A profile class for the webserver machine.
 #
-# A description of what this class does
+# It installs iis server and its components.
 #
 # @example
 #   include profile::webserver_baseline

@@ -1,6 +1,8 @@
-# @summary A short summary of the purpose of this class
+# @summary
+# A profile class for the user machine.
 #
-# A description of what this class does
+# It enforces the default settings using registry configuration for user machines.
+# The default settings include IEESC configuration and enabling shutdown event tracker.
 #
 # @example
 #   include profile::generic_settings

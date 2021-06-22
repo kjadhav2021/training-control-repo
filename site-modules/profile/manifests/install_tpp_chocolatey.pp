@@ -1,6 +1,7 @@
-# @summary A short summary of the purpose of this class
+# @summary
+# A profile class for the user machine.
 #
-# A description of what this class does
+# It installs 7zip and notepad plus plus on user machines using chocolatey repo.
 #
 # @example
 #   include profile::install_tpp_chocolatey
