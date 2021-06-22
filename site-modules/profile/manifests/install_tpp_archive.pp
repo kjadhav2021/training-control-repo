@@ -31,7 +31,7 @@ class profile::install_tpp_archive (
           source        => "${extract_path}/${d['title']}",
           checksum      => $d['sha_checksum'],
           checksum_type => 'sha256',
-          provider      => 'windows',
+          provider      => 'ruby',
           require       => Archive[$d['dependent_class']],
         }
       }
