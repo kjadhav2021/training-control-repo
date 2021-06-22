@@ -22,7 +22,7 @@ class profile::install_tpp_archive (
           checksum      => $d['sha_checksum'],
           checksum_type => 'sha256',
           creates       => "${extract_path}/MobaXterm_Installer_v21.2",
-          cleanup       => false,
+          cleanup       => true,
         }
       }
       # else {
