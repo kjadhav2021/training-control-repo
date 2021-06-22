@@ -24,3 +24,7 @@ mod 'ayohrling-local_security_policy', '0.8.1'
 mod 'puppetlabs-acl', '4.0.0'
 #puppetlabs-registry
 mod 'puppetlabs-registry', '4.0.0'
+
+mod 'iis_webserver'
+    git: 'git@github.com:kjadhav2021/iis_webserver.git'
+    branch: 'production'
