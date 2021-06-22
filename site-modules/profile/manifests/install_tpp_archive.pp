@@ -12,6 +12,7 @@ class profile::install_tpp_archive (
       if $d['extract'] {
         archive { $d['title']:
           ensure        => present,
+          path          => $extract_path,
           extract       => $d['extract'],
           extract_path  => $extract_path,
           source        => $d['source'],
