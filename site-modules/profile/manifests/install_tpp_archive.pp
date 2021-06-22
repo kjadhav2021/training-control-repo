@@ -27,6 +27,7 @@ class profile::install_tpp_archive (
       }
       else {
         archive { $d['title']:
+          path          => "${extract_path}/${d['title']}",
           source        => "${extract_path}/${d['title']}",
           checksum      => $d['sha_checksum'],
           checksum_type => 'sha256',
