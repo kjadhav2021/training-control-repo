@@ -11,10 +11,10 @@ profile::baseline::enable_shutdown_tracker::reasonui_title: 'display shutdown ev
 profile::baseline::enable_shutdown_tracker::reasonui_setting: 'ShutdownReasonUI'
 profile::baseline::enable_shutdown_tracker::enable: '0x00000001'
 
-profile::baseline::disable_ieesc::admin_title: 'enable shutdown event tracker'
-profile::baseline::disable_ieesc::admin_setting: 'ShutdownReasonOn'
-profile::baseline::disable_ieesc::user_title: 'display shutdown event tracker ui'
-profile::baseline::disable_ieesc::user_setting: 'ShutdownReasonUI'
+profile::baseline::disable_ieesc::admin_title: 'disable IEESC for admin'
+profile::baseline::disable_ieesc::admin_setting: '{A509B1A7-37EF-4b3f-8CFC-4F3A74704073}\IsInstalled'
+profile::baseline::disable_ieesc::user_title: 'disable IEESC for user'
+profile::baseline::disable_ieesc::user_setting: '{A509B1A8-37EF-4b3f-8CFC-4F3A74704073}\IsInstalled'
 profile::baseline::disable_ieesc::disable: '0x00000000'
 
 profile::baseline::mobaxterm::extract_path: 'C:/tmppackage'
