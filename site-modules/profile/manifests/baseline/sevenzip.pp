@@ -16,12 +16,12 @@ class profile::baseline::sevenzip (
   package { $package_name:
       ensure   => installed,
       provider => 'chocolatey',
-      notify   => Reboot[$reboot_title],
   }
   #  reboot server if reboot_machine boolean variable is true.
   if $reboot_machine {
     reboot { $reboot_title:
-      apply  => finished,
+      provider  => 'windows',
+      subscribe => Package[$package_name],
     }
   }
 }
