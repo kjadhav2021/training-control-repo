@@ -5,17 +5,9 @@ profile::baseline::account:groups: 'BUILTIN\Administrators'
 profile::baseline::account:comment: 'Vandelay Industries Administrator - managed by Puppet'
 profile::baseline::account:logon_policy_value: 'vandelay,*S-1-5-80-0'
 
-profile::baseline::enable_shutdown_tracker::reason_title: 'enable shutdown event tracker'
-profile::baseline::enable_shutdown_tracker::reason_setting: 'ShutdownReasonOn'
-profile::baseline::enable_shutdown_tracker::reasonui_title: 'display shutdown event tracker ui'
-profile::baseline::enable_shutdown_tracker::reasonui_setting: 'ShutdownReasonUI'
-profile::baseline::enable_shutdown_tracker::enable: '0x00000001'
+profile::baseline::enable_shutdown_tracker::enable: true
 
-profile::baseline::disable_ieesc::admin_title: 'disable IEESC for admin'
-profile::baseline::disable_ieesc::admin_setting: '{A509B1A7-37EF-4b3f-8CFC-4F3A74704073}\IsInstalled'
-profile::baseline::disable_ieesc::user_title: 'disable IEESC for user'
-profile::baseline::disable_ieesc::user_setting: '{A509B1A8-37EF-4b3f-8CFC-4F3A74704073}\IsInstalled'
-profile::baseline::disable_ieesc::disable: '0x00000000'
+profile::baseline::disable_ieesc::disable: true
 
 profile::baseline::mobaxterm::extract_path: 'C:/tmppackage'
 profile::baseline::mobaxterm::zip_source: 'https://download.mobatek.net/2122021051924233/MobaXterm_Installer_v21.2.zip'

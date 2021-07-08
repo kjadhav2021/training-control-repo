@@ -13,18 +13,24 @@ class profile::baseline::disable_ieesc (
   String $user_setting  = '{A509B1A8-37EF-4b3f-8CFC-4F3A74704073}\IsInstalled',
   String $disable       = '0x00000000',
 ){
+  if $disable {
+    $policy_value = '0x00000000'
+  }
+  else {
+    $policy_value = '0x00000001'
+  }
   # setting up registry value to enable shutdown event tracker
-  registry_value { $admin_title:
+  registry_value { 'disable IEESC for admin':
     ensure => 'present',
     type   => 'dword',
-    path   => "HKLM\Software\Microsoft\Active Setup\Installed Components\"${admin_setting}",
-    data   => $disable,
+    path   => 'HKLM\Software\Microsoft\Active Setup\Installed Components\{A509B1A7-37EF-4b3f-8CFC-4F3A74704073}\IsInstalled',
+    data   => $policy_value,
   }
   # setting up registry value to display shutdown event tracker ui
-  registry_value { $user_title:
+  registry_value { 'disable IEESC for user':
     ensure => 'present',
     type   => 'dword',
-    path   => "HKLM\Software\Microsoft\Active Setup\Installed Components\"${user_setting}",
-    data   => $disable,
+    path   => 'HKLM\Software\Microsoft\Active Setup\Installed Components\{A509B1A8-37EF-4b3f-8CFC-4F3A74704073}\IsInstalled',
+    data   => $policy_value,
   }
 }
