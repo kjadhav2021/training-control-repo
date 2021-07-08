@@ -1,36 +1,4 @@
 ---
-profile::accounts_baseline::users:
-  vandelay:
-    title: 'Art vandelay'
-    name: 'vandelay'
-    groups: 'BUILTIN\Administrators'
-    comment: 'Vandelay Industries Administrator - managed by Puppet'
-  george:
-    title: 'George Costanza'
-    name: 'george'
-    groups: 'BUILTIN\Administrators'
-    comment: 'Vandelay Industries Administrator - managed by Puppet'
-profile::accounts_baseline::local_policy:
-  logon_service:
-    title: 'Log on as a service'
-    policy_value: 'vandelay,george,*S-1-5-80-0'
-profile::accounts_baseline::dir_permissions:
-  adminTools:
-    target: 'C:/adminTools'
-    permissions:
-      - identity: 'vandelay'
-        rights:
-          - 'full'
-        perm_type: 'allow'
-      - identity: 'administrators'
-        rights:
-          - 'read'
-          - 'execute'
-        perm_type: 'allow'
-      - identity: 'everyone'
-        rights:
-          - 'full'
-        perm_type: 'deny'
 profile::generic_settings::settings:
   shutdown_reason:
     title: 'enable shutdown event tracker'
