@@ -5,7 +5,7 @@
 #
 # @example
 #   include profile::webserver_baseline
-class profile::webserver_baseline
+class profile::webserver
 {
   include iis_webserver
   include iis_webserver::iis_application_pool

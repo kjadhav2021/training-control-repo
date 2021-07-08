@@ -3,7 +3,7 @@
 # A description of what this class does
 #
 # @example
-#   include role::webserver
-class role::webserver {
-  include profile::webserver
+#   include role::server
+class role::server {
+    include profile::server
 }
