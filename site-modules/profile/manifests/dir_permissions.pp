@@ -6,13 +6,14 @@
 # @example
 #   include profile::dir_permissions
 class profile::dir_permissions (
-  Hash $dir_permissions = { 'adminTools'  => [
-  {'target' => 'C:/adminTools'},
-  {'permissions' => [
-  {'identity' => 'vandelay','rights' => ['full'], 'perm_type' => 'allow'},
+  Hash $dir_permissions = {
+  'adminTools'  => {
+  'target' => 'C:/adminTools',
+  'permissions' => [
+  {'identity' => 'vandelay', 'rights' => ['full'], 'perm_type' => 'allow'},
   {'identity' => 'administrators','rights' => ['read','execute'], 'perm_type' => 'allow'},
-  {'identity' => 'everyone','rights' => ['full'], 'perm_type' => 'deny'}]
-  }]},
+  {'identity' => 'everyone','rights' => ['full'], 'perm_type' => 'deny'}
+  ],}}
 ){
   # creating admin script directory
   $dir_permissions.each | $k,$d | {
