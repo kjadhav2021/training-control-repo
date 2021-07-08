@@ -15,10 +15,10 @@ class profile::dir_permissions (
   }]},
 ){
   # creating admin script directory
-  $dir_permissions.each | $permission | {
-    file { $permission[1]['target']:
+  $dir_permissions.each | $k,$d | {
+    file { $d['target']:
       ensure => 'directory',
-      path   => $permission[1]['target'],
+      path   => $d['target'],
     }
   }
   create_resources( acl ,$dir_permissions )
