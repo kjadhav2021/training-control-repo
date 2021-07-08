@@ -7,11 +7,7 @@
 # @example
 #   include profile::baseline::disable_ieesc
 class profile::baseline::disable_ieesc (
-  String $admin_title   = 'disable IEESC for admin',
-  String $admin_setting = '{A509B1A7-37EF-4b3f-8CFC-4F3A74704073}\IsInstalled',
-  String $user_title    = 'disable IEESC for user',
-  String $user_setting  = '{A509B1A8-37EF-4b3f-8CFC-4F3A74704073}\IsInstalled',
-  String $disable       = '0x00000000',
+  Boolean $disable = '0x00000000',
 ){
   if $disable {
     $policy_value = '0x00000000'

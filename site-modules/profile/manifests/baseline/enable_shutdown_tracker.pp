@@ -7,7 +7,7 @@
 # @example
 #   include profile::baseline::enable_shutdown_tracker
 class profile::baseline::enable_shutdown_tracker (
-  String $enable = '0x00000001',
+  Boolean $enable = '0x00000001',
 ){
   if $enable {
     $policy_value = '0x00000001'
