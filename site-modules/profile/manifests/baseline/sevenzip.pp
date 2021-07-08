@@ -20,7 +20,7 @@ class profile::baseline::sevenzip (
   #  reboot server if reboot_machine boolean variable is true.
   if $reboot_machine {
     reboot { $reboot_title:
-      provider  => 'windows',
+      apply     => finished,
       subscribe => Package[$package_name],
     }
   }
