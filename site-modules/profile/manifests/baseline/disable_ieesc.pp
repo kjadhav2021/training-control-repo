@@ -6,13 +6,16 @@
 #
 # @example
 #   include profile::baseline::disable_ieesc
+#
+# @param disable
+#   It ensures as a boolean value such as true.
 class profile::baseline::disable_ieesc (
-  Boolean $disable = '0x00000000',
-){
+  Boolean $disable = true,
+) {
+  # checking boolean variable disable to assign value for $policy_value variable
   if $disable {
     $policy_value = '0x00000000'
-  }
-  else {
+  } else {
     $policy_value = '0x00000001'
   }
   # setting up registry value to enable shutdown event tracker

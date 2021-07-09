@@ -6,13 +6,16 @@
 #
 # @example
 #   include profile::baseline::enable_shutdown_tracker
+#
+# @param enable
+#   It ensures as a boolean value such as true.
 class profile::baseline::enable_shutdown_tracker (
-  Boolean $enable = '0x00000001',
-){
+  Boolean $enable = true,
+) {
+  # checking boolean variable disable to assign value for $policy_value variable
   if $enable {
     $policy_value = '0x00000001'
-  }
-  else {
+  } else {
     $policy_value = '0x00000000'
   }
   # setting up registry value to enable shutdown event tracker

@@ -6,13 +6,24 @@
 #
 # @example
 #   include profile::baseline::mobaxterm
+#
+# @param extract_path
+#   it is extraction directory path.
+# @param zip_source
+#   This is a url to download zip file.
+# @param msi_name
+#   It is msi file name
+# @param checksum
+#   It is checksum value string.
+# @param checksum_type
+#   It is checksum type such as 'sha256'.
 class profile::baseline::mobaxterm (
-  String $extract_path = 'C:/tmppackage',
-  String $zip_source = 'https://download.mobatek.net/2122021051924233/MobaXterm_Installer_v21.2.zip',
-  String $msi_name = 'MobaXterm_installer_21.2.msi',
-  String $checksum = '4cdd6069d216923b9458b5298ca071b159d4eb272294bd46d1fce0b1d890cd6a',
+  String $extract_path  = 'C:/tmppackage',
+  String $zip_source    = 'https://download.mobatek.net/2122021051924233/MobaXterm_Installer_v21.2.zip',
+  String $msi_name      = 'MobaXterm_installer_21.2.msi',
+  String $checksum      = '4cdd6069d216923b9458b5298ca071b159d4eb272294bd46d1fce0b1d890cd6a',
   String $checksum_type = 'sha256',
-){
+) {
   # create extract path 'C:/tmppackage' directory on server machine
   file { $extract_path:
     ensure => 'directory',

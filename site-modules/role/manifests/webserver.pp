@@ -1,6 +1,7 @@
-# @summary A short summary of the purpose of this class
+# @summary
+# A role class for the webserver role.
 #
-# A description of what this class does
+# it includes profile::webserver
 #
 # @example
 #   include role::webserver

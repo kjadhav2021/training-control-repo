@@ -6,14 +6,25 @@
 #
 # @example
 #   include profile::baseline::account
+#
+# @param full_name
+#   it is full name of the user. This also ensures as a string value such as 'Art vandelay'.
+# @param user_name
+#   This is user_name for the user. It ensures as a string value such as 'vandelay'.
+# @param groups
+#   It ensures as a string value such as 'BUILTIN\Administrators'
+# @param comment
+#   It ensures as a string value such as 'Vandelay Industries Administrator - managed by Puppet'.
+# @param logon_policy_value
+#   It ensures as a string value such as 'vandelay,*S-1-5-80-0'.
 class profile::baseline::account (
   String $full_name          = 'Art vandelay',
   String $user_name          = 'vandelay',
   String $groups             = 'BUILTIN\Administrators',
   String $comment            = 'Vandelay Industries Administrator - managed by Puppet',
   String $logon_policy_value = 'vandelay,*S-1-5-80-0',
-){
-  $logon_policy = 'Log on as a service'
+) {
+  $logon_policy     = 'Log on as a service'
   $default_password = 'Puppetlabs123!'
   # creating user art vandelay
   user { $full_name:
