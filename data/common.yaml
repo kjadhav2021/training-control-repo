@@ -19,4 +19,5 @@ profile::baseline::mobaxterm::checksum_type: 'sha256'
 profile::baseline::sevenzip::package_name: '7zip'
 profile::baseline::sevenzip::reboot_title: 'after_run'
 profile::baseline::sevenzip::reboot_machine: false
-
+# input parameters for baseline::chrome profile
+profile::baseline::chrome::package_name: 'googlechrome'
