@@ -4,7 +4,7 @@
 # It installs iis server and its components.
 #
 # @example
-#   include profile::webserver_baseline
+#   include profile::webserver
 class profile::webserver (
   Array[String] $web_components = [
     'iis_webserver',
