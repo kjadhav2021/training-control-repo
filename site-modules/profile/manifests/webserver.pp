@@ -5,9 +5,15 @@
 #
 # @example
 #   include profile::webserver_baseline
-class profile::webserver
+class profile::webserver (
+  Array[String] $web_components = [
+    'iis_webserver',
+    'iis_webserver::iis_application_pool',
+    'iis_webserver::iis_site'
+  ],
+)
 {
-  include iis_webserver
-  include iis_webserver::iis_application_pool
-  include iis_webserver::iis_site
+  $web_components.each |$component| {
+    include($component)
+  }
 }
