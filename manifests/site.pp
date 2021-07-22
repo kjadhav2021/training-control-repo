@@ -33,6 +33,7 @@ File {
 node 'win2016' {
   notify {"Message from here: ${uservar}":}
   include scope_example
+  include child
 }
 
 node default {
