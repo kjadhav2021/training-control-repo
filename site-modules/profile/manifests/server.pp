@@ -4,7 +4,7 @@
 # @example
 #   include profile::server
 class profile::server (
-  Array[String] $baseline = ['account', 'dir_permissions', 'disable_ieesc', 'enable_shutdown_tracker', 'packages'],
+  Array[String] $baseline = ['account', 'dir_permissions', 'ieesc', 'shutdown_tracker', 'packages'],
 ) {
   $baseline.each |$baseline| {
     include("profile::baseline::${baseline}")
