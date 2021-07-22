@@ -36,8 +36,12 @@ mod 'puppetlabs-chocolatey', '6.0.1'
 mod 'puppetlabs-reboot', '4.0.2'
 
 
-mod 'iis_webserver',
-    git: 'git@github.com:kjadhav2021/iis_webserver.git',
+# mod 'iis_webserver',
+#     git: 'git@github.com:kjadhav2021/iis_webserver.git',
+#     branch: 'production'
+
+mod 'webapp_manager',
+    git: 'git@github.com:kjadhav2021/webapp_manager.git',
     branch: 'production'
 
 mod 'puppetlabs-iis', '8.0.2'

@@ -5,7 +5,6 @@
 #   include profile::baseline::chrome
 # @param package_name
 #   it is package name to download from chocolatey.
-
 class profile::baseline::chrome (
   String $package_name = 'googlechrome',
 ) {

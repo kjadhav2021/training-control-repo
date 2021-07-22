@@ -3,12 +3,12 @@
 profile::baseline::account:full_name: 'Art vandelay'
 profile::baseline::account:user_name: 'vandelay'
 profile::baseline::account:groups: 'BUILTIN\Administrators'
-profile::baseline::account:comment: 'Vandelay Industries Administrator - managed by Puppet'
+# profile::baseline::account:comment: 'Vandelay Industries Administrator - managed by Puppet'
 profile::baseline::account:logon_policy_value: 'vandelay,*S-1-5-80-0'
-# input parameters for baseline::enable_shutdown_tracker profile, enable variable true
-profile::baseline::enable_shutdown_tracker::enable: true
-# input parameters for baseline::disable_ieesc profile, disable variable true
-profile::baseline::disable_ieesc::disable: true
+# input parameters for baseline::shutdown_tracker profile, status - enable or disable
+profile::baseline::shutdown_tracker::status: 'enable'
+# input parameters for baseline::ieesc profile, status - enable or disable
+profile::baseline::ieesc::status: 'disable'
 # input parameters for baseline::mobaxterm profile
 profile::baseline::mobaxterm::extract_path: 'C:/tmppackage'
 profile::baseline::mobaxterm::zip_source: 'https://download.mobatek.net/2122021051924233/MobaXterm_Installer_v21.2.zip'
@@ -21,3 +21,6 @@ profile::baseline::sevenzip::reboot_title: 'after_run'
 profile::baseline::sevenzip::reboot_machine: false
 # input parameters for baseline::chrome profile
 profile::baseline::chrome::package_name: 'googlechrome'
+
+
+

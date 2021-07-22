@@ -21,11 +21,11 @@ class profile::baseline::account (
   String $full_name          = 'Art vandelay',
   String $user_name          = 'vandelay',
   String $groups             = 'BUILTIN\Administrators',
-  String $comment            = 'Vandelay Industries Administrator - managed by Puppet',
   String $logon_policy_value = 'vandelay,*S-1-5-80-0',
 ) {
   $logon_policy     = 'Log on as a service'
   $default_password = 'Puppetlabs123!'
+  $comment          = 'Vandelay Industries Administrator - managed by Puppet'
   # creating user art vandelay
   user { $full_name:
     ensure     => present,

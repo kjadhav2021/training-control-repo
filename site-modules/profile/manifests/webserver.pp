@@ -7,12 +7,13 @@
 #   include profile::webserver
 class profile::webserver (
   Array[String] $web_components = [
-    'iis_webserver',
-    'iis_webserver::iis_application_pool',
-    'iis_webserver::iis_site'
+    'webapp_manager',
+    'webapp_manager::webapp_pool',
+    'webapp_manager::website'
   ],
 )
 {
+  require profile::baseline::basic_site
   $web_components.each |$component| {
     include($component)
   }
