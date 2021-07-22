@@ -25,16 +25,16 @@ File { backup => false }
 #
 # For more on node definitions, see: https://puppet.com/docs/puppet/latest/lang_node_definitions.html
 
-File {
-  ensure => file,
-  owner  => 'kunal',
-}
+# File {
+#   ensure => file,
+#   owner  => 'kunal',
+# }
 
-node 'win2016' {
-  notify {"Message from here: ${uservar}":}
-  include scope_example
-  include child
-}
+# node 'win2016' {
+#   notify {"Message from here: ${uservar}":}
+#   include scope_example
+#   include child
+# }
 
 node default {
   # This is where you can declare classes for all nodes.
