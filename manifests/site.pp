@@ -24,8 +24,17 @@ File { backup => false }
 # Puppet Enterprise console and External Node Classifiers (ENC's).
 #
 # For more on node definitions, see: https://puppet.com/docs/puppet/latest/lang_node_definitions.html
+
+# $uservar = "Hi, I'm top!"
+
+node 'win2016' {
+  notify {"Message from here: ${uservar}":}
+}
+
 node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
 }
+
+
