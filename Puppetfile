@@ -46,3 +46,4 @@ mod 'webapp_manager',
 
 mod 'puppetlabs-iis', '8.0.2'
 mod 'puppet-windowsfeature', '3.2.2'
+mod 'puppetlabs-cd4pe_jobs', '1.5.0'
