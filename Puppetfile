@@ -41,7 +41,7 @@ mod 'puppetlabs-reboot', '4.0.2'
 #     branch: 'production'
 
 mod 'webapp_manager',
-    git: 'git@github.com:kjadhav2021/webapp_manager.git',
+    git: 'https://github.com/kjadhav2021/webapp_manager.git',
     branch: 'production'
 
 mod 'puppetlabs-iis', '8.0.2'
